@@ -195,6 +195,7 @@ Node* AVL :: Delete(Node* p,int key){
         if(p->lchild->hight>p->rchild->hight){
             temp = InorderPredissor(p);
             p->data = temp->data;
+            
             p->lchild = Delete(p->lchild, p->data);
         }else{
             temp = InorderSuccesor(p);
