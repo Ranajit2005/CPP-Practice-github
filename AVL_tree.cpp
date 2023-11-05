@@ -195,7 +195,6 @@ Node* AVL :: Delete(Node* p,int key){
         if(p->lchild->hight>p->rchild->hight){
             temp = InorderPredissor(p);
             p->data = temp->data;
-            
             p->lchild = Delete(p->lchild, p->data);
         }else{
             temp = InorderSuccesor(p);
@@ -211,7 +210,7 @@ Node* AVL :: Delete(Node* p,int key){
     if(BalanceFac(p)==2 && BalanceFac(p->lchild)==-1)    p=LRRotation(p);
     if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==1)    p=RLRotation(p);
     if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==0)    p=RLRotation(p);
-    if(BalanceFac(p)==-2 && BalanceFac(p->lchild)==0)    p=RLRotation(p);
+    if(BalanceFac(p)==2 && BalanceFac(p->lchild)==0)    p=RLRotation(p);
 
     return p;
 }
@@ -227,6 +226,11 @@ int main(){
         rd.setroot(rd.Insert(rd.getroot(),x));
     }
 
+    rd.Preorder(rd.getroot());
+    int y;
+    cout<<endl<<"Which number you want to delete : ";
+    cin>>y;
+    rd.setroot(rd.Delete(rd.getroot(),y));
     rd.Preorder(rd.getroot());
     
     return 0;
