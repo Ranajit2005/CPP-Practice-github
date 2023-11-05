@@ -209,8 +209,8 @@ Node* AVL :: Delete(Node* p,int key){
     if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==-1)    p=RRRotation(p);
     if(BalanceFac(p)==2 && BalanceFac(p->lchild)==-1)    p=LRRotation(p);
     if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==1)    p=RLRotation(p);
-    if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==0)    p=RLRotation(p);
-    if(BalanceFac(p)==2 && BalanceFac(p->lchild)==0)    p=RLRotation(p);
+    if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==0)    p=LLRotation(p);
+    if(BalanceFac(p)==2 && BalanceFac(p->lchild)==0)    p=RRRotation(p);
 
     return p;
 }
