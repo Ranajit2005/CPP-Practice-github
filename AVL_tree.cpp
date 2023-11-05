@@ -34,6 +34,9 @@ public:
     Node* RLRotation(Node* );
     void Inorder(Node* );
     void Preorder(Node* );
+    Node* Delete(Node*, int);
+    Node* InorderPredissor(Node*);
+    Node* InorderSuccesor(Node* );
 };
 
 int AVL::getHight(Node* p){
@@ -158,6 +161,56 @@ Node* AVL::Insert(Node* p,int key){     //recursive insert
     if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==-1)    p=RRRotation(p);
     if(BalanceFac(p)==2 && BalanceFac(p->lchild)==-1)    p=LRRotation(p);
     if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==1)    p=RLRotation(p);
+
+    return p;
+}
+
+Node* AVL :: InorderPredissor(Node* p){
+    p = p->lchild;
+    while(p->rchild){
+        p = p->rchild;
+    }
+    return p;
+}
+
+Node* AVL :: InorderSuccesor(Node* p){
+    p = p->rchild;
+    while(p->lchild){
+        p = p->lchild;
+    }
+    return p;
+}
+
+Node* AVL :: Delete(Node* p,int key){
+    if(p == nullptr)    return nullptr;
+    if(p->lchild == nullptr && p->rchild == nullptr && p->data == key){
+        if(p==root) root = p;
+        delete p;
+        return nullptr;
+    }
+    Node* temp;
+    if(key < p->data) p->lchild = Delete(p->lchild,key);
+    else if(key > p->data) p->rchild = Delete(p->rchild,key);
+    else{
+        if(p->lchild->hight>p->rchild->hight){
+            temp = InorderPredissor(p);
+            p->data = temp->data;
+            p->lchild = Delete(p->lchild, p->data);
+        }else{
+            temp = InorderSuccesor(p);
+            p->data = temp->data;
+            p->rchild = Delete(p->rchild, p->data);
+        }
+    }
+    p->hight = max(getHight(p->lchild),getHight(p->rchild))+1;
+
+    //perform roration
+    if(BalanceFac(p)==2 && BalanceFac(p->lchild)==1)    p=LLRotation(p);
+    if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==-1)    p=RRRotation(p);
+    if(BalanceFac(p)==2 && BalanceFac(p->lchild)==-1)    p=LRRotation(p);
+    if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==1)    p=RLRotation(p);
+    if(BalanceFac(p)==-2 && BalanceFac(p->rchild)==0)    p=RLRotation(p);
+    if(BalanceFac(p)==-2 && BalanceFac(p->lchild)==0)    p=RLRotation(p);
 
     return p;
 }
