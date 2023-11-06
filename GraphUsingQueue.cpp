@@ -15,7 +15,7 @@ public:
     bool isFull();
     bool isEmpty();
     void EnQ(int );
-    void DeQ();
+    int DeQ();
     void display();
 };
 
@@ -43,11 +43,13 @@ void Q :: EnQ(int data){
     return;
 }
 
-void Q :: DeQ(){
+int Q :: DeQ(){
     if(!isEmpty()){
         front++;
+        int x = arr[front];
+        return x;
     }
-    return;
+    return -1;
 }
 
 void Q :: display(){
@@ -65,6 +67,7 @@ int main(){
     rd.EnQ(4);
     rd.EnQ(5);
     rd.display();
-    
+    rd.DeQ();
+    rd.display();
     return 0;
 }
