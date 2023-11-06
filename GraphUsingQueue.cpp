@@ -56,3 +56,15 @@ void Q :: display(){
     }
     cout << endl;
 }
+
+int main(){
+    Q rd(5);
+    rd.EnQ(1);
+    rd.EnQ(2);
+    rd.EnQ(3);
+    rd.EnQ(4);
+    rd.EnQ(5);
+    rd.display();
+    
+    return 0;
+}
