@@ -37,6 +37,22 @@ bool Q :: isEmpty(){
 
 void Q :: EnQ(int data){
     if(!isFull()){
-
+        rear ++;
+        arr[rear] = data;
     }
+    return;
+}
+
+void Q :: DeQ(){
+    if(!isEmpty()){
+        front++;
+    }
+    return;
+}
+
+void Q :: display(){
+    for (int i = front + 1; i <= rear; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }

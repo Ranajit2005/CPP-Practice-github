@@ -22,7 +22,7 @@ Queue ::Queue(int s)
     this->size = s;
     front = -1;
     rear = -1;
-    Q = new int[size];
+    Q = new int[size];  // remember this line
 }
 
 bool Queue ::isEmpty()
