@@ -60,7 +60,7 @@ void Q :: display(Q *q){
 }
 
 int main(){
-    Q rd(5);
+    Q rd(500);
     rd.EnQ(&rd,1);
     rd.EnQ(&rd,2);
     rd.EnQ(&rd,3);
@@ -68,6 +68,8 @@ int main(){
     rd.EnQ(&rd,5);
     rd.display(&rd);
     rd.DeQ(&rd);
+    rd.EnQ(&rd,6);
     rd.display(&rd);
+
     return 0;
 }
