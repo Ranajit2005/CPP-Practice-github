@@ -2,8 +2,8 @@
 using namespace std;
 int main(){
     int n;
+    cout<<"Enter your binary number : ";
     cin>>n;
-    
     int ans=0;
     int power=1;
 
@@ -13,7 +13,7 @@ int main(){
         power*=2;
         n=n/10;
     }
-    cout<<ans<<endl;
+    cout<<"The equivalent decimal numver is : "<<ans<<endl;
     
     return 0;
 }
