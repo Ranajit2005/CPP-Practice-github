@@ -10,7 +10,7 @@ public:
     Q(int s){
         size = s;
         front = rear = -1;
-        arr = new int[size];
+        arr = new int[size]; //to be remember
     }
     bool isFull(Q *q);
     bool isEmpty(Q *q);
