@@ -70,6 +70,6 @@ int main(){
     rd.DeQ(&rd);
     rd.EnQ(&rd,6);
     rd.display(&rd);
-
+    
     return 0;
 }
