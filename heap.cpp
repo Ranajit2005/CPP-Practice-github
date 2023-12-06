@@ -18,7 +18,9 @@ void Delete(int arr[],int n){   //Delete is possible only from rrot
     i = 1;
     j = 2 * i;
     while(j<n-1){
-        if(arr[j+1]>arr[j])     j = j+1;    //Check which is bigger bigger between left or right child
+        if(arr[j+1]>arr[j]){    //Check which is bigger bigger between left or right child
+        j = j+1;   
+        }
         if(arr[i]<arr[j]){      //Check whichn is bigger between parent and child
             swap(arr[i],arr[j]);
             i=j;
