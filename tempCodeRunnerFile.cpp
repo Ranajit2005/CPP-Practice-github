@@ -1,8 +1,14 @@
-p->hight = max(getHight(p->lchild),getHight(p->rchild)) + 1;
-    // int bf = BalanceFac(p);
-    
-    // //perform rotation
-    // if(BalanceFac(p)==2 && BalanceFac(p->lchild)==1)    LLRotation(p);
-    // if(BalanceFac(p)==-2 && BalanceFac(p->lchild)==-1)    RRRotation(p);
-    // if(BalanceFac(p)==2 && BalanceFac(p->lchild)==-1)    LRRotation(p);
-    // if(BalanceFac(p)==-2 && BalanceFac(p->lchild)==1)    RLRotation(p);
+cin>>n;
+    // cout<<endl;
+    // arr[0]=0;   //becaue here we don't use index 0
+    // for(int i=1;i<n;i++){   //so the loop is start from 1
+    //     cout<<"Give the element of the array in index at "<<i<<" is : ";
+    //     cin>>arr[i];
+    //     cout<<endl;
+    // }
+
+
+    // for(int i=1;i<n;i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;

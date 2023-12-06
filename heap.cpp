@@ -14,5 +14,11 @@ int main(){
         cin>>arr[i];
         cout<<endl;
     }
+
+
+    for(int i=1;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
 return 0;
 }

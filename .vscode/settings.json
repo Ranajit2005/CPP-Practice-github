@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ENGINE.C": "cpp"
+        "ENGINE.C": "cpp",
+        "iostream": "cpp"
     }
 }
