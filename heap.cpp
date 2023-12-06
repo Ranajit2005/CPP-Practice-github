@@ -11,6 +11,16 @@ void InsertForMaxHeap(int arr[],int n){
     arr[i] = temp;
 }
 
+void InsertForMinHeap(int arr[],int n){
+    int temp,i=n;
+    temp = arr[n];
+    while(i>1 && temp<arr[i/2]){
+        arr[i] = arr[i/2];
+        i = i/2;
+    }
+    arr[i] = temp;
+}
+
 void Delete(int arr[],int n){   //Delete is possible only from rrot
     int x,i,j;
     x = arr[n];     //store root at a variable
@@ -42,6 +52,7 @@ int main(){
         cout<<"Give the element of the array at index "<<i<<" : ";
         cin>>arr[i];
         InsertForMaxHeap(arr,i);
+        // InsertForMinHeap(arr,i);
         // cout<<endl;
     }
 
