@@ -32,12 +32,11 @@ void InsertForMinHeap(int arr[],int n){
 	// 	}
 
 void Delete(int arr[],int n){   //Delete is possible only from rrot
-    int x,i,j;
-    x = arr[1];     //store root at a variable
-    arr[1] = arr[n];    //Delete root
+    int i,j;
+    swap(arr[1],arr[n]);    //Delete root
     i = 1;
     j = 2 * i;
-    while(j<=n-1){
+    while(j+1<n){
         if(arr[j+1]>arr[j]){    //Check which is bigger bigger between left or right child
         j = j+1;   
         }
@@ -48,7 +47,6 @@ void Delete(int arr[],int n){   //Delete is possible only from rrot
         }
         else    break;
     }
-    arr[n] = x;
 }
 
 int main(){
@@ -72,12 +70,12 @@ int main(){
     }
     cout<<endl;
 
-    // for(int i=size-1;i>2;i--){
-    //     Delete(arr,i);
-    // }
-    Delete(arr,5);
-    Delete(arr,4);
-    Delete(arr,3);
+    for(int i=size-1;i>2;i--){
+        Delete(arr,i);
+    }
+    // Delete(arr,5);
+    // Delete(arr,4);
+    // Delete(arr,3);
     // // Delete(arr,2);
     // // Delete(arr,1);
     cout<<"The sorted array is : ";
