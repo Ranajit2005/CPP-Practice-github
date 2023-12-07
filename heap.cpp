@@ -21,16 +21,6 @@ void InsertForMinHeap(int arr[],int n){
     arr[i] = temp;
 }
 	
-	// void heapify(int i,int n){
-	// 	int largest = i;
-	// 	int left = 2*i , right = left + 1;
-	// 	if( left < n && v[left] > v[largest] )  largest = left;
-	// 	if( right < n && v[right] > v[largest] )  largest = right;
-	// 	if( largest != i ){
-	// 		swap( v[largest] , v[i] );
-	// 		heapify( largest , n );	
-	// 	}
-
 void DeleteWhenMaxWork(int arr[],int n){   //Delete is possible only from rrot
     int i,j;
     swap(arr[1],arr[n]);    //Delete root
