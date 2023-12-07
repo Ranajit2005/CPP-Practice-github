@@ -31,7 +31,7 @@ void InsertForMinHeap(int arr[],int n){
 	// 		heapify( largest , n );	
 	// 	}
 
-void Delete(int arr[],int n){   //Delete is possible only from rrot
+void DeleteWhenMaxWork(int arr[],int n){   //Delete is possible only from rrot
     int i,j;
     swap(arr[1],arr[n]);    //Delete root
     i = 1;
@@ -41,6 +41,24 @@ void Delete(int arr[],int n){   //Delete is possible only from rrot
         j = j+1;   
         }
         if(arr[i]<arr[j]){      //Check whichn is bigger between parent and child
+            swap(arr[i],arr[j]);
+            i=j;
+            j=2*i;
+        }
+        else    break;
+    }
+}
+
+void DeleteWhenMinWork(int arr[],int n){   //Delete is possible only from rrot
+    int i,j;
+    swap(arr[1],arr[n]);    //Delete root
+    i = 1;
+    j = 2 * i;
+    while(j+1<n){
+        if(arr[j+1]<arr[j]){    //Check which is bigger bigger between left or right child
+        j = j+1;   
+        }
+        if(arr[i]>arr[j]){      //Check whichn is bigger between parent and child
             swap(arr[i],arr[j]);
             i=j;
             j=2*i;
@@ -59,8 +77,8 @@ int main(){
     for(int i=1;i<size;i++){    //start from index 1
         cout<<"Give the element of the array at index "<<i<<" : ";
         cin>>arr[i];
-        InsertForMaxHeap(arr,i);
-        // InsertForMinHeap(arr,i);
+        // InsertForMaxHeap(arr,i);
+        InsertForMinHeap(arr,i);
         // cout<<endl;
     }
 
@@ -71,7 +89,8 @@ int main(){
     cout<<endl;
 
     for(int i=size-1;i>2;i--){
-        Delete(arr,i);
+        // DeleteWhenMaxWork(arr,i);
+        DeleteWhenMinWork(arr,i);
     }
     // Delete(arr,5);
     // Delete(arr,4);
