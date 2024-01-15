@@ -29,7 +29,7 @@ Node *InsertAtEnd(Node *head,int value){
 
 Node *InsertAtBetween(Node *head,int value,int index){
     Node *ptr = new Node(value);
-    Node *p = head; // head is pointer , so it has not value 0 
+    Node *p = head; // head is pointer , so it has not value 0  
     int i=0;
     while(i!=index-1){
         p=p->next;
