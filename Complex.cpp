@@ -53,16 +53,16 @@ public:
 
 int main()
 {
-    // Complex com1, com2, res;
-    // cout << "Enter the 1st complex number : " << endl;
-    // com1.input();
-    // cout << "Enter the 2nd complex number : " << endl;
-    // com2.input();
-    // res = com1 + com2;
-    // res.display();
+    Complex com1, com2, res;
+    cout << "Enter the 1st complex number : " << endl;
+    com1.input();
+    cout << "Enter the 2nd complex number : " << endl;
+    com2.input();
+    res = com1 + com2;
+    res.display();
 
-    complex1 com1(3,5), com2(7,9);
-    complex1 sum = com1.add(com2);
-    sum.display();
+    // complex1 com1(3,5), com2(7,9);
+    // complex1 sum = com1.add(com2);
+    // sum.display();
     return 0;
 }
