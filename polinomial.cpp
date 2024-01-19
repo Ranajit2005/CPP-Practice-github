@@ -26,8 +26,8 @@ void polinomial :: display(){
 
 int main(){
 
-    polinomial p1(1,2,3),p2(1,2,3);
-    polinomial res = p1 + p2;
+    polinomial p1(1,2,3),p2(1,2,3),p3(1,2,3);
+    polinomial res = p1 + p2 + p3;
     res.display();
     return 0;
 }
