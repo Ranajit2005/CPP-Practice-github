@@ -1,33 +1,39 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Complex{
+class Complex
+{
     int real, img;
-    public:
+
+public:
     void input();
-    Complex operator + (Complex obj){
+    Complex operator+(Complex obj)
+    {
         Complex temp;
         temp.real = real + obj.real;
         temp.img = img + obj.img;
         return temp;
     }
-    void display(){
-        cout<<"The number is : "<<real <<"+ "<<img<<"i"<<endl;
+    void display()
+    {
+        cout << "The number is : " << real << "+ " << img << "i" << endl;
     }
 };
 
-void Complex :: input(){
-    cout<<"Enter real part : ";
-    cin>>real;
-    cout<<"Enter imaginary part : ";
-    cin>>img;
+void Complex ::input()
+{
+    cout << "Enter real part : ";
+    cin >> real;
+    cout << "Enter imaginary part : ";
+    cin >> img;
 }
 
-int main(){
-    Complex com1,com2,res;
-    cout<<"Enter the 1st complex number : "<<endl;
+int main()
+{
+    Complex com1, com2, res;
+    cout << "Enter the 1st complex number : " << endl;
     com1.input();
-    cout<<"Enter the 2nd complex number : "<<endl;
+    cout << "Enter the 2nd complex number : " << endl;
     com2.input();
     res = com1 + com2;
     res.display();
