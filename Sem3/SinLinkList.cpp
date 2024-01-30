@@ -16,12 +16,12 @@ public:
     Linklist(){head = NULL;}
     void InsertFirst(int x){
         Node* t = new Node(x);
-        if(head == NULL){
-            head = t;
-        }else{
+        // if(head == NULL){
+        //     head = t;
+        // }else{
             t->next = head;
             head = t;
-        }
+        // }
         
     }
 
@@ -34,13 +34,13 @@ public:
     }
 };
 
-int mian(){
+int main(){
     Linklist li;
     li.InsertFirst(20);
-    // li.InsertFirst(30);
-    // li.InsertFirst(40);
-    // li.InsertFirst(50);
-    // li.InsertFirst(10);
+    li.InsertFirst(30);
+    li.InsertFirst(40);
+    li.InsertFirst(50);
+    li.InsertFirst(10);
 
     li.Display();
     cout<<"End";
