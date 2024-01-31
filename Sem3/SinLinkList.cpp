@@ -46,6 +46,67 @@ public:
             p=p->next;
         }
     }
+
+    int DeleteFirst(){
+        if(head == NULL){
+            cout<<"LInklistt is Empty ";
+            return -1;
+        }    
+        Node* t = head;
+        head = head->next;
+        int x = t->data;
+        delete t;
+        return x;
+    }
+
+    int DeleteEnd(){
+        if(head == NULL){
+            cout<<"LInklistt is Empty ";
+            return -1;
+        }
+        Node* p = head;
+        while(p){
+            p=p->next;
+        }
+        int x = p->data;
+        delete p;
+        return x;
+    }
+
+    int DeletePos(int index){
+        Node* t = head;
+        Node* p = t;
+        for(int i=0;i<index - 1;i++){
+            p = t;
+            t = t->next;
+        }
+        p->next = t->next;
+        int x = t->data;
+        delete t;
+        return x;
+    }
+
+    bool Search(int x){
+        Node* p = head;
+        while(p){
+            if(x == p->data)    return 1;
+            p=p->next;
+        }
+        return 0;
+    }
+
+    void Reverse(){
+        Node* p = head;
+        Node* q = NULL;
+        Node* r = NULL;
+        while(p){
+            r = q;
+            q = p;
+            p = p->next;
+            q->next = r;
+        }
+        head = q;
+    }
 };
 
 int main(){
@@ -64,10 +125,15 @@ int main(){
     li.Display();
     cout<<endl;
 
-    li.InsertPos(17,3);
+    // li.InsertPos(17,3);
+    // li.DeleteFirst();
+    // li.DeleteEnd();
+    // cout<<"The delete value is : "<<li.DeletePos(2)<<endl;
+    // cout<<li.Search(1)<<endl;
+    li.Reverse();
     li.Display();
     cout<<endl;
-    li.InsertPos(33,5);
+    // li.InsertPos(33,5);
 
     li.Display();
     cout<<endl<<"End";
