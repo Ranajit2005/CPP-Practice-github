@@ -65,11 +65,12 @@ public:
             return -1;
         }
         Node* p = head;
-        while(p){
+        while(p->next!=NULL){
             p=p->next;
         }
-        int x = p->data;
-        delete p;
+        Node* t = p->next;
+        int x = t->data;
+        delete t;
         return x;
     }
 
