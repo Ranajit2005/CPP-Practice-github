@@ -73,7 +73,8 @@ void CircularQueue ::display()
     int i = front + 1;
     do {
         cout << Q[i]<<" ";
-        i = (i + 1) % size;
+        // i = (i + 1) % size;
+        i++;
     } while (i != (rear + 1) % size);
     cout << endl;
 }
