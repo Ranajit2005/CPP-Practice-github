@@ -2,29 +2,29 @@
 using namespace std;
 
 class Stack{
-    int top = -1;
+    int t = -1;
     char* rd = new char[100];
 public:
     void push(char r){
-        top++;
-        rd[top] = r;
+        t++;
+        rd[t] = r;
     }
     char pop(){
-        char r = rd[top];
-        top--;
+        char r = rd[t];
+        t--;
         return r;
     }
-    char topp(){
-        return rd[top];
+    char top(){
+        return rd[t];
     }
     void Display(){
-        for(int i=top;i>=0;i--){
+        for(int i=t;i>=0;i--){
             cout<<rd[i]<<" ";
         }
         cout<<endl;
     }
     bool empty(){
-        if(top == -1)   return 1;
+        if(t == -1)   return 1;
         return 0;
     }
 }st;
@@ -46,22 +46,22 @@ void InfToPost(string s){
         else if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')){
             ans.push_back(ch);
         }else if(ch == ')'){
-            while(st.topp()!='('){
-                ans.push_back(st.topp());
+            while(st.top()!='('){
+                ans.push_back(st.top());
                 st.pop();
             }
             st.pop();
         }
         else if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^'){
-            while(!st.empty() && porio(ch) < porio(st.topp()) || !st.empty() && porio(ch)==porio(st.topp()) ){
-                ans.push_back(st.topp());
+            while(!st.empty() && porio(ch) < porio(st.top()) || !st.empty() && porio(ch)==porio(st.top()) ){
+                ans.push_back(st.top());
                 st.pop();
             }
             st.push(ch);
         }
     }
         while(!st.empty()){
-            ans.push_back(st.topp());
+            ans.push_back(st.top());
             st.pop();
         }
     cout<<ans<<endl;

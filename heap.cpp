@@ -21,7 +21,7 @@ void InsertForMinHeap(int arr[],int n){
     arr[i] = temp;
 }
 	
-void DeleteWhenMaxWork(int arr[],int n){   //Delete is possible only from rrot
+void DeleteWhenMaxWork(int arr[],int n){   //Delete is possible only from root
     int i,j;
     swap(arr[1],arr[n]);    //Delete root
     i = 1;
