@@ -71,7 +71,7 @@ int main(){
     cout<<endl;
     cout<<q.DeQ()<<endl;
     q.Display();
-
+    
 
     return 0;
 }
