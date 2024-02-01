@@ -80,8 +80,11 @@ public:
             if(key<p->data) p->lchild = Delete(key,p->lchild);
             else if(key>p->data)    p->rchild = Delete(key,p->rchild);
             else{
-
+                temp = IP(p);
+                p->data = temp->data;
+                p->lchild = Delete(temp->data,p->lchild);
             }
+            return p;
         }
 };
 
@@ -149,22 +152,24 @@ int main(){
 
     BST rd;
     rd.Insert(30);
-    rd.Insert(50);
+    rd.Insert(5);
     rd.Insert(10);
     rd.Insert(60);
     rd.Insert(20);
     rd.Insert(70);
-    // rd.Insert(5);
+    rd.Insert(7);
     // rd.Insert(55);
 
     rd.Inorder(rd.getroot());
-    cout<<endl;
-    rd.Preorder(rd.getroot());
-    cout<<endl;
-    rd.Postorder(rd.getroot());
+    // cout<<endl;
+    // rd.Preorder(rd.getroot());
+    // cout<<endl;
+    // rd.Postorder(rd.getroot());
     cout<<endl<<rd.CountNode(rd.getroot())<<endl;
     cout<<rd.LeafNode(rd.getroot())<<endl;
     cout<<"Total Intarnal Nodes are : "<<rd.CountNode(rd.getroot())-rd.LeafNode(rd.getroot())<<endl;
-    cout<<rd.Hight(rd.getroot());
+    cout<<rd.Hight(rd.getroot())<<endl;
+    rd.Setroot(rd.Delete(10,rd.getroot()));
+    rd.Inorder(rd.getroot());
     return 0;
 }
