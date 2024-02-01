@@ -74,7 +74,7 @@ int main(){
     // st.push('c');
     // st.push('d');
     // st.Display();
-    string rd = "A+B*C+D";
+    string rd = "((A-B)+D/(E+F)*G)";
     InfToPost(rd);
     return 0;
 }
