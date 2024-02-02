@@ -40,15 +40,6 @@ public:
         cout<<endl;
     }
 
-    void EnQ(int x){
-        if (isFull()){
-        cout << "Queue overflow" << endl;
-        return;
-        }
-        rear = (rear +1)%size;
-        Q[rear] = x;
-    }
-
     int DeQ(){
         if (isEmpty()){
         cout << "Queue is underflow" << endl;
@@ -58,6 +49,15 @@ public:
         int x = Q[front];
         return x;
     }
+    void EnQ(int x){
+        if (isFull()){
+        cout << "Queue overflow" << endl;
+        return;
+        }
+        rear = (rear +1)%size;
+        Q[rear] = x;
+    }
+
 };
 
 int main(){
