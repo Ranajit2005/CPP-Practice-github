@@ -158,8 +158,8 @@ int main(){
     rd.Insert(20);
     rd.Insert(70);
     rd.Insert(7);
-
     // rd.Insert(55);
+
     rd.Inorder(rd.getroot());
     // cout<<endl;
     // rd.Preorder(rd.getroot());
