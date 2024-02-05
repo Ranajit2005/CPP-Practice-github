@@ -96,7 +96,7 @@ int BST :: CountNode(Node* p){
 
 int BST :: CountLeafNode(Node* p){  //not working
     int x=0,y=0;
-    if(p!=nullptr){
+    if(p){
         x=CountLeafNode(p->lchild);
         y=CountLeafNode(p->rchild);
         if(p->lchild==NULL && p->rchild==NULL){
