@@ -178,7 +178,7 @@ int main(){
     //     cin>>x;
     //     if(x==-1)   break;
     //     rd.Insert(x);
-    // } 
+    // }
 
     cout<<"The inorder is : ";
     rd.Inorder(rd.getroot());
