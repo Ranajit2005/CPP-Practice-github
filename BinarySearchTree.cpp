@@ -192,7 +192,7 @@ int main(){
     // cout<<"The number of Nodes are "<<rd.CountNode(rd.getroot())<<endl;
     // cout<<"The number of leaf Nodes are "<<rd.CountLeafNode(rd.getroot())<<endl;  //not working
     // cout<<"The hight is : "<<rd.Hight(rd.getroot())<<endl;
- 
+
     int y;
     cout<<endl<<"Which number you want to delete : "; 
     cin>>y;
