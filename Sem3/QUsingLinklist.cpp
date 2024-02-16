@@ -38,7 +38,7 @@ public:
             p=p->next;
         }
     }
-
+ 
     int DeleteFirst(){
         if(head == NULL){
             cout<<"LInklistt is Empty ";
