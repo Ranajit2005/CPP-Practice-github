@@ -21,7 +21,7 @@ public:
             head = t;
             t->next = head;
         }
-        Node* last = head;
+        // Node* last = head;
         Node* p = head;
         while (p->next!=head){
             p = p->next;
