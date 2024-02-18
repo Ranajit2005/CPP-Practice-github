@@ -13,7 +13,7 @@ void display(Node *head){
         temp=temp->next;
     }
 }
- 
+
 int main(){
 
     Node *head = new Node;
