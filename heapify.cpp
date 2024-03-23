@@ -45,7 +45,7 @@ int main(){
     //For heap sort
     for(int i=size-1;i>=1;i--){
         swap(v[1],v[i]);
-        MaxHeap(v,size,i);
+        MaxHeap(v,i,1);
     }
 
     cout<<"After delete : ";
