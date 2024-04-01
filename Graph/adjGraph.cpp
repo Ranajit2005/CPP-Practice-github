@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+//Space complexity is O(N^2)
 
 int main(){
     int n, m;
@@ -8,7 +9,7 @@ int main(){
     cin>>n;
     cout<<"Give the total number of edges : ";
     cin>>m;
-    int graph[n+1][n+1] = {0};  //hwrw we follow 1 base indexing and inisialise with 0
+    int graph[n+1][n+1] = {0};  //here we follow 1 base indexing and inisialise with 0
     for(int i=1; i<=m ;i++){
         int v1,v2;
         cout<<"Give which two vertices are connected : ";
