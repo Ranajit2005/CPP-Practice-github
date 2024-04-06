@@ -45,10 +45,9 @@ int main(){
     int connect = 0;
     for(int i = 1; i<v;i++){
         if(find(i) == i) connect++;
-        // connect++;
     }
 
-    cout<<connect<<endl;
+    cout<<"The disjoint sets are : "<<connect<<endl;
 
     return 0;
 }
