@@ -14,6 +14,16 @@ int find(int v){
     return parent[v] = find(parent[v]);
 }
 
+void Union(int v1,int v2){
+    v1 = find(v1);
+    v2 = find(v2);
+    if(v1 != v2){
+        if(size[v1]<size[v2])   swap(v1,v2);
+        parent[v2] = v1;
+        size[v1] += size[v2];
+    }
+}
+
 int main(){
     int v,e;
     cout<<"Enter the number of veritices : ";
