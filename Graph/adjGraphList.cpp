@@ -17,6 +17,14 @@ int main(){
         vec[a].push_back(b);
         vec[b].push_back(a);
     }
-    
+
+    cout<<"The adjacence list is : "<<endl;
+
+    for(int i=0;i<v;i++){
+        for(int j=0;j<vec[i].size();j++){
+            cout<<vec[i][j]<<" ";
+        }
+        cout<<endl;
+    }
     return 0;
 }
