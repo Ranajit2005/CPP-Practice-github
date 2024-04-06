@@ -31,6 +31,24 @@ int main(){
     cout<<"Enter the number of edges : ";
     cin>>e;
 
+    for(int i=0;i<v;i++){
+        make(i);
+    }
+
+    while(e--){
+        int v1,v2;
+        cout<<"Give the vertics which you want to connect : ";
+        cin>>v1>>v2;
+        Union(v1,v2);
+    }
     
+    int connect = 0;
+    for(int i = 1; i<v;i++){
+        if(find(i) == i) connect++;
+        // connect++;
+    }
+
+    cout<<connect<<endl;
+
     return 0;
 }
