@@ -6,7 +6,7 @@ using namespace std;
 const int N = 100;
 int visited[100] = {0};
 vector<int>graph[N];
-int level[N];
+// int level[N];
 
 void BFS(int src){
     queue<int>q;
@@ -22,6 +22,7 @@ void BFS(int src){
             if(!visited[child]){    //if this is not visited
                 q.push(child);
                 visited[child] = 1;
+                // level[child] = level[cur_v] + 1;
             }
         }
     }
