@@ -21,7 +21,7 @@ void BFS(int src){
         for(int child : graph[cur_v]){  //run for all the g[i] element 
             if(!visited[child]){    //if this is not visited
                 q.push(child);
-                visited[child] = 1;
+                visited[child] = 1;     //push the element and marked them
                 // level[child] = level[cur_v] + 1;
             }
         }
