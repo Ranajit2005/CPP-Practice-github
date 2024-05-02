@@ -36,6 +36,8 @@ int main(){
     cin>>v>>e;
 
     vector<pair<int,pair<int,int>>>vec;   // <weight,<vertex,vertex>>
+
+    cout<<"Give input weight, vertex and vertext restectivly : ";
     for(int i=0;i<e;i++){
         int x,y,wt;
         cin>>wt>>x>>y;
@@ -57,7 +59,7 @@ int main(){
         if(find(x) == find(y))  continue;
         Union(x,y);
         cost = cost + wt;
-        cout<<x<<" "<<y<<endl;
+        cout<<x<<"->"<<y<<endl;
     }
 
     cout<<"The total cost is "<<cost;
