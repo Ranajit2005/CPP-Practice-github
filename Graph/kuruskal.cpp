@@ -3,6 +3,7 @@
 #include<algorithm>
 using namespace std;
 
+//code of Disjoint set
 int parent[100];
 int size[100];
 
@@ -26,7 +27,7 @@ int Union(int v1,int v2){
     }
 }
 
-
+// <-------------------------------->
 
 int main(){
 
