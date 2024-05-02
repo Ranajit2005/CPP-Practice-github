@@ -57,6 +57,7 @@ int main(){
         int y = a.second.second;
 
         if(find(x) == find(y))  continue;
+
         Union(x,y);
         cost = cost + wt;
         cout<<x<<"->"<<y<<endl;
