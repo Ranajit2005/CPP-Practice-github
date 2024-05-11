@@ -20,14 +20,7 @@ int main(){
     
     int ks[size][maxwt+1];
 
-
     //here we manually initialise it with 0 because here we take input of the array
-    for(int i=0;i<size;i++){
-        for(int j=0;j<=maxwt;j++){
-            ks[i][j] = 0;
-        }
-    }
-
     for(int i=0;i<size;i++){
         for(int j=0;j<=maxwt;j++){
             ks[i][j] = 0;
@@ -46,12 +39,19 @@ int main(){
 
     cout<<"The maximum profit is : "<<ks[n][maxwt]<<endl;
 
-    // for(int i=0;i<size;i++){
-    //     for(int j=0;j<=maxwt;j++){
-    //         cout<<ks[i][j]<<" ";
-    //     }
-    //     cout<<endl;
-    // }
+    //Code for which items are include
+    int i = n,j = maxwt;
+    while(i>0 && j>0){
+        if(ks[i][j] == ks[i-1][j]){
+            cout<< i <<" th item is not included"<<endl;
+            i--;
+        }else{
+            cout<< i <<" th item is included"<<endl;
+            i--;
+            j = j - weight[i];  //Find for remaining weight
+        }
+    }
+    cout<<endl;
 
     return 0;
 }
