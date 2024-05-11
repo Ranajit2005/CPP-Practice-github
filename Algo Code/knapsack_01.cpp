@@ -21,7 +21,7 @@ int main(){
     int ks[size][maxwt+1] = {0};
 
     for(int i=1 ;i <=n; i++){
-        for(int w=0; w<=maxwt; w++){
+        for(int w=1; w<=maxwt; w++){
             if(weight[i] <= w){
                 ks[i][w] = max(ks[i-1][w], ks[i-1][w-weight[i]]+profit[i]);
             }else{
