@@ -18,7 +18,21 @@ int main(){
     cout<<"Give the maximum capacity : ";
     cin>>maxwt;
     
-    int ks[size][maxwt+1] = {0};
+    int ks[size][maxwt+1];
+
+
+    //here we manually initialise it with 0
+    for(int i=0;i<size;i++){
+        for(int j=0;j<=maxwt;j++){
+            ks[i][j] = 0;
+        }
+    }
+
+    for(int i=0;i<size;i++){
+        for(int j=0;j<=maxwt;j++){
+            ks[i][j] = 0;
+        }
+    }
 
     for(int i=1 ;i <=n; i++){
         for(int w=1; w<=maxwt; w++){
@@ -32,12 +46,12 @@ int main(){
 
     cout<<"The maximum profit is : "<<ks[n][maxwt]<<endl;
 
-    for(int i=0;i<size;i++){
-        for(int j=0;j<=maxwt;j++){
-            cout<<ks[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    // for(int i=0;i<size;i++){
+    //     for(int j=0;j<=maxwt;j++){
+    //         cout<<ks[i][j]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
 
     return 0;
 }
