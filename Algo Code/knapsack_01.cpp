@@ -41,14 +41,14 @@ int main(){
 
     //Code for which items are include
     int i = n,j = maxwt;
-    while(i>0 && j>0){
+    while(i>0 && j>=0){
         if(ks[i][j] == ks[i-1][j]){
             cout<< i <<" th item is not included"<<endl;
             i--;
         }else{
             cout<< i <<" th item is included"<<endl;
-            i--;
             j = j - weight[i];  //Find for remaining weight
+            i--;
         }
     }
     cout<<endl;
