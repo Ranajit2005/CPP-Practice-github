@@ -20,7 +20,7 @@ int main(){
     
     int ks[size][maxwt+1] = {0};
 
-    for(int i=0 ;i <=n; i++){
+    for(int i=1 ;i <=n; i++){
         for(int w=0; w<=maxwt; w++){
             if(weight[i] <= w){
                 ks[i][w] = max(ks[i-1][w], ks[i-1][w-weight[i]]+profit[i]);
@@ -30,7 +30,7 @@ int main(){
         }
     }   
 
-    cout<<"The maximum profit is : "<<ks[n][maxwt+1]<<endl;
+    cout<<"The maximum profit is : "<<ks[n][maxwt]<<endl;
 
     for(int i=0;i<size;i++){
         for(int j=0;j<=maxwt;j++){
