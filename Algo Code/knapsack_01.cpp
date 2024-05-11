@@ -21,7 +21,7 @@ int main(){
     int ks[size][maxwt+1];
 
 
-    //here we manually initialise it with 0
+    //here we manually initialise it with 0 because here we take input of the array
     for(int i=0;i<size;i++){
         for(int j=0;j<=maxwt;j++){
             ks[i][j] = 0;
