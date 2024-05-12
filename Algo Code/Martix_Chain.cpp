@@ -30,7 +30,7 @@ int main(){
             int j = i+d;
             int min = MAX;
 
-            for(int k=i;k<=j-1;k++){
+            for(int k=i;k<j;k++){
                 int val = cost[i][k] + cost[k+1][j] + dimention[i-1] * dimention[k] * dimention[j];
 
                 if(val < min){
