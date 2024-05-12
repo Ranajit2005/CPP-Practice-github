@@ -26,7 +26,6 @@ int main(){
 
     for(int d=1;d<n-1;d++){
         for(int i=1;i<n-d;i++){
-
             int j = i+d;
             int min = MAX;
 
@@ -43,24 +42,6 @@ int main(){
     }
 
     cout<<"The minimun number of multiplication is : "<<cost[1][n-1];
-
+    
     return 0;
 }
-
-    // int arr[2*n];
-    // for(int i=0;i<n;i++){
-    //     cout<<"Give the dimention of "<<i + 1<<" matrix :";
-    //     cin>>arr[2*i]>>arr[2*i+1];
-    // }
-
-    // int dimention[n+1];
-
-    // for(int i=1;i<2*n;i+2){
-    //     if(arr[i] != arr[i+1]){
-    //         cout<<"Multiplication cannot be possible "<<endl;
-    //     }
-    // }
-
-    // for(int i=0;i<2*n;i++){
-    //     cout<<arr[i]<<" ";
-    // }
