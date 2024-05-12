@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+#define MAX 999
 
 int main(){
     int m;
@@ -25,10 +26,13 @@ int main(){
 
     for(int d=1;d<n-1;d++){
         for(int i=1;i<n-d;i++){
+
             int j = i+d;
-            int min = 10000;
+            int min = MAX;
+
             for(int k=i;k<=j-1;k++){
                 int val = cost[i][k] + cost[k+1][j] + dimention[i-1] * dimention[k] * dimention[j];
+
                 if(val < min){
                     min = val;
                     k_value[i][j] = k;
