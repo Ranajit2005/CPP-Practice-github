@@ -26,12 +26,34 @@ void lcs(string s,string t){
     
     cout<<"Maximun matching length is "<<dp[n][m]<<endl;
 
-    for(int i=0;i<=n;i++){
-        for(int j=0;j<=m;j++){
-            cout<<dp[i][j]<<" ";
-        }
-        cout<<endl;
+    // Print the subsequence
+    int len = dp[n][m];
+    string ans = "";
+
+    for(int i = 0;i<len;i++){
+        ans += '$';
     }
+
+    int index = len - 1;    //String are in 0 base indexing 
+    int i = n, j = m;
+    while(i>0 && j>0){
+        if(s[i-1] == t[j-1]){
+            ans[index] = s[i-1];
+            index--,i--,j--;
+        }
+        else if(dp[i-1][j]>dp[i][j-1])  i--;
+        else j--;
+    }
+
+    cout<<"The Longest Common Subsequence is : "<<ans<<endl;
+
+    //Check the DP table
+    // for(int i=0;i<=n;i++){
+    //     for(int j=0;j<=m;j++){
+    //         cout<<dp[i][j]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
 
 }
 
