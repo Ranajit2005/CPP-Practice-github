@@ -15,6 +15,7 @@ void lcs(string s,string t){
             else dp[i][j] = max(dp[i-1][j],dp[i][j-1]);
         }
     }
+    
     cout<<"Maximun matching length is "<<dp[n][m]<<endl;
 
     for(int i=0;i<=n;i++){
