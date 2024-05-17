@@ -1,5 +1,5 @@
 #include<iostream>
-#include<vector>
+// #include<vector>
 using namespace std;
 
 void lcs(string s,string t){
@@ -58,9 +58,9 @@ void lcs(string s,string t){
 }
 
 int main(){
-
     // string s1 = "abcde";
     // string s2 = "bdge";
+    
     string s1,s2;
     cout<<"Give the 1st string : ";
     cin>>s1;
