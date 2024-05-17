@@ -6,7 +6,15 @@ void lcs(string s,string t){
     int n = s.size();
     int m = t.size();
 
-    vector<vector<int>>dp(n+1,vector<int>(m+1,0));
+    // vector<vector<int>>dp(n+1,vector<int>(m+1,0));
+    int dp[n+1][m+1] = {0};
+
+    for(int i=0;i<=n;i++){
+        for(int j=0;j<=m;j++){
+            dp[i][j] = 0;
+        }
+    }
+
     for(int i=1;i<=n;i++){
         for(int j=1;j<=m;j++){
             //string are matching
