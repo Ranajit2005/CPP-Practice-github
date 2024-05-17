@@ -37,8 +37,14 @@ void lcs(string s,string t){
 
 int main(){
 
-    string s1 = "abcde";
-    string s2 = "bdge";
+    // string s1 = "abcde";
+    // string s2 = "bdge";
+    string s1,s2;
+    cout<<"Give the 1st string : ";
+    cin>>s1;
+    cout<<"Give the 2nd string : ";
+    cin>>s2;
+
     lcs(s1,s2);
 
     return 0;
