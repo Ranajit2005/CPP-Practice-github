@@ -52,7 +52,7 @@ int main(){
         }
     }
 
-    cout<<"The maximum profit is : "<<final_profit<<endl<<"Total job can be performed : "<<count_job<<endl;
+    cout<<"The maximum profit is : "<<final_profit<<endl<<"Total job can be performed : "<<count_job<<endl<<"The slot is : ";
     for(int i=1;i<=max_deadline;i++){
         cout<<slot[i]<<" ";
     }
