@@ -37,6 +37,7 @@ int main(){
     for(int i=1;i<=max_deadline;i++){
         slot[i]='0';
     }
+    
     OppsiteBubbleSort(profit,deadline,job_id,n);
     
     int final_profit = 0, count_job = 0;
@@ -53,6 +54,7 @@ int main(){
     }
 
     cout<<"The maximum profit is : "<<final_profit<<endl<<"Total job can be performed : "<<count_job<<endl<<"The slot is : ";
+
     for(int i=1;i<=max_deadline;i++){
         cout<<slot[i]<<" ";
     }
