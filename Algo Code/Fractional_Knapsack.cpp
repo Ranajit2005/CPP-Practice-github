@@ -44,6 +44,7 @@ int main(){
             wt += weight[i];
             final_profit += profit[i];
         }
+        
         //It is for those item which we take fractonally
         else{
             float remaining_wt = maxwt - wt;
@@ -53,13 +54,6 @@ int main(){
     }
 
     cout<<"The maximun profit is : "<<final_profit<<endl;
-
-    for(int i = 0;i<n;i++){
-        // cout<<p_w[i]<<" ";
-        // cout<<profit[i]<<" ";
-        // cout<<weight[i]<<endl;
-        // cout<<taken_item[i]<<" "<<endl;
-    }
 
     return 0;
 }
