@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//Note : It can be solve using map, pair or sets. Then the code will be more esay.
 
 void OppsiteBubbleSort(float p_w[],float profit[],float weight[],int n){
     for(int i = 0 ;i<n-1;i++){
