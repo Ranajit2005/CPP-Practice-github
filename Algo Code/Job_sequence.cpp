@@ -47,6 +47,7 @@ int main(){
                 slot[j] = job_id[i];
                 count_job++;
                 final_profit += profit[i];
+                break;      //Don't forget to give it
             }
         }
     }
