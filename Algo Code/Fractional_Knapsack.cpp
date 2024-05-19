@@ -34,20 +34,20 @@ int main(){
 
     OppsiteBubbleSort(p_w,profit,weight,n);
 
-    int wt = 0,taken_item[n] = {0};
+    int wt_bag = 0,taken_item[n] = {0};
     float final_profit = 0;
 
     for(int i=0;i<n;i++){
 
         //It is for those items which we taken totally
-        if(wt + weight[i] <= maxwt){
-            wt += weight[i];
+        if(wt_bag + weight[i] <= maxwt){
+            wt_bag += weight[i];
             final_profit += profit[i];
         }
-        
+
         //It is for those item which we take fractonally
         else{
-            float remaining_wt = maxwt - wt;
+            float remaining_wt = maxwt - wt_bag;
             final_profit += (profit[i]/weight[i])*remaining_wt;
             break;
         }
