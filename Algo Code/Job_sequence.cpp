@@ -57,9 +57,5 @@ int main(){
         cout<<slot[i]<<" ";
     }
 
-    // for(int i=0;i<n;i++){
-    //     cout<<job_id[i]<<" "<<profit[i]<<" "<<deadline[i]<<endl;
-    // }
-
     return 0;
 }
