@@ -14,7 +14,6 @@ void OppsiteBubbleSort(int profit[],int deadline[],char job_id[],int n){
     }
 }
 
-
 int main(){
     int n,max_deadline;
     
@@ -34,11 +33,32 @@ int main(){
     cout<<"Give the maximum deadline : ";
     cin>>max_deadline;
 
+    char slot[max_deadline+1];
+    for(int i=0;i<max_deadline;i++){
+        slot[i]=='0';
+    }
     OppsiteBubbleSort(profit,deadline,job_id,n);
-    for(int i=0;i<n;i++){
-        cout<<job_id[i]<<" "<<profit[i]<<" "<<deadline[i]<<endl;
+    
+    int final_profit = 0, count_job = 0;
+    
+    for(int i = 0;i<n;i++){     // This loop is for all job checking 
+        for(int j=deadline[i];j>=0;j--){        //This loop is for deadline or left side deadline
+            if(slot[j] == '0'){
+                slot[j] = job_id[i];
+                count_job++;
+                final_profit += profit[i];
+            }
+        }
     }
 
+    cout<<"The maximum profit is : "<<final_profit<<endl<<"Total job can be performed : "<<count_job<<endl;
+    for(int i=0;i<max_deadline;i++){
+        cout<<slot[i]<<" ";
+    }
+
+    // for(int i=0;i<n;i++){
+    //     cout<<job_id[i]<<" "<<profit[i]<<" "<<deadline[i]<<endl;
+    // }
 
     return 0;
 }
