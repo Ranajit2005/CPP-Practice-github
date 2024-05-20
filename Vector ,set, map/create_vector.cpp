@@ -34,13 +34,37 @@ public:
 };
 
 int main(){
-	vector<int> v;
-	v.push_back(1);
-	v.push_back(5);
-	v.push_back(10);
-    vector<int>vec[10];
-	for (int i = 0; i < v.size(); i++){
-		cout << v[i] << endl;
+	vector<int> v1;
+	v1.push_back(1);
+	v1.push_back(5);
+	v1.push_back(10);
+	for (int i = 0; i < v1.size(); i++){
+		cout << v1[i] << endl;
 	}
+    
+    int v,e;
+    cout<<"Enter the number of vertices : ";
+    cin>>v;
+    cout<<"Enter the number of edges : ";
+    cin>>e;
+    vector<int>vec[50];
+    for(int i=0;i<e;i++){
+        int a,b;
+        cout<<"Enter which vertices are connected : ";
+        cin>>a>>b;
+        vec[a].push_back(b);
+        vec[b].push_back(a);
+    }
+
+    cout<<"The adjacence list is : "<<endl;
+
+    for(int i=0;i<v;i++){
+        for(int j=0;j<vec[i].size();j++){
+            cout<<vec[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+
 	return 0;
 }
