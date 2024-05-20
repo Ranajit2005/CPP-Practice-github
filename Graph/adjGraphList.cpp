@@ -2,7 +2,6 @@
 #include<vector>
 using namespace std;
 
-
 int main(){
     int v,e;
     cout<<"Enter the number of vertices : ";
@@ -26,5 +25,6 @@ int main(){
         }
         cout<<endl;
     }
+    
     return 0;
 }
