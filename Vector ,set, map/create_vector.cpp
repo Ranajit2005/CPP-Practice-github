@@ -58,7 +58,7 @@ int main(){
 
     cout<<"The adjacence list is : "<<endl;
 
-    for(int i=0;i<v;i++){
+    for(int i=1;i<=v;i++){
         for(int j=0;j<vec[i].size();j++){
             cout<<vec[i][j]<<" ";
         }
