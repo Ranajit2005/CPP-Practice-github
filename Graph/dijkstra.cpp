@@ -54,7 +54,7 @@ int main(){
         cin>>a>>b>>wt;
         vec[a].push_back(b);
         // vec[b].push_back(a);
-        vec[a][b].weight = wt;
+        // vec[a][b].weight = wt;
     }
 
     cout<<"The adjacence list is : "<<endl;
