@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+const int N = 100;
+char board[N][N];
 
-void printBoard(char **board, int n) {
+void printBoard(char board[N][N], int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cout << board[i][j] << " ";
@@ -11,7 +13,7 @@ void printBoard(char **board, int n) {
     cout << endl;
 }
 
-void solve(int col,char** board, int n,int leftRow[],int upperDiagonal[],int lowerDiagonal[]){
+void solve(int col,char board[N][N], int n,int leftRow[],int upperDiagonal[],int lowerDiagonal[]){
 
     //Base case
     if(col == n) {
@@ -50,9 +52,9 @@ int main() {
     cin >> n;
 
     // Allocate memory for the chessboard
-    char **board = new char *[n];
+    // char **board = new char *[n];
     for (int i = 0; i < n; i++) {
-        board[i] = new char[n];
+        // board[i] = new char[n];
         for (int j = 0; j < n; j++) {
             board[i][j] = '.';
         }
