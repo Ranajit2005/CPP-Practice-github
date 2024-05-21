@@ -12,15 +12,19 @@ void solve(int col,vector<string> &board, vector<vector<string>> &ans, vector<in
 
     //Checking Condition
     for(int row=0;row<n;row++){
+
         //Cheak the queen is placed or not
         if(leftRow[row] == 0 && upperDiagonal[(n-1) + (col-row)] == 0 && lowerDiagonal[row + col] == 0){
+
             //if all those condition sitisfy then placed the queen and marked tha placed as 1
             board[row][col] = 'Q';
             leftRow[row] = 1;
             upperDiagonal[(n-1)+(col-row)] = 1;
             lowerDiagonal[row+col] = 1;
+
             //till now we check the queen is placed 1st col, now we check for other col
             solve(col+1,board,ans,leftRow,upperDiagonal,lowerDiagonal,n);
+            
             //now we check for other ans
             board[row][col] = '.';
             leftRow[row] = 0;
