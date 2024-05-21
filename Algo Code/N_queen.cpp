@@ -24,7 +24,7 @@ void solve(int col,vector<string> &board, vector<vector<string>> &ans, vector<in
 
             //till now we check the queen is placed 1st col, now we check for other col
             solve(col+1,board,ans,leftRow,upperDiagonal,lowerDiagonal,n);
-            
+
             //now we check for other ans
             board[row][col] = '.';
             leftRow[row] = 0;
