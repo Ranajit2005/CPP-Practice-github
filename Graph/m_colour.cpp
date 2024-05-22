@@ -5,7 +5,7 @@ using namespace std;
 int graph[100][100];
 
 bool possible(int node,int colour[],int v,int col){
-    for(int k;k<v;k++){
+    for(int k=0;k<v;k++){
         if(k != node && graph[k][node] == 1 && colour[k] == col){
             return 0;
         }
@@ -36,8 +36,8 @@ bool GraphColouring(int m,int v){
 }
 
 void Show(int v){
-    for(int i=0;i<=v;i++){
-        for(int j=0;j<=v;j++){
+    for(int i=0;i<v;i++){
+        for(int j=0;j<v;j++){
             cout<<graph[i][j]<<" ";
         }
         cout<<endl;
@@ -58,7 +58,7 @@ int main(){
         }
     }
 
-    // Show(v);
+    Show(v);
     int m;
     cout<<"Give the number of the colour : ";
     cin>>m;
