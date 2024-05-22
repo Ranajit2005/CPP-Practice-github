@@ -6,7 +6,7 @@ int graph[100][100];
 
 bool possible(int node,int colour[],int v,int col){
     for(int k=0;k<v;k++){
-        if(k != node && graph[k][node] == 1 && colour[k] == col){
+        if(graph[k][node] == 1 && colour[k] == col){
             return 0;
         }
     }
@@ -17,13 +17,20 @@ bool solve(int node,int colour[],int m,int v){
 
     //Base condition, means all the vertex coloured with diffrent colour and we came 0 vexter to last vectex
     if(node == v){
+        //Print the colour of vertex
+        for(int i=0;i<v;i++){
+            cout<<colour[i]<<"-";
+        }
+        cout<<endl;
         return 1;
     }
 
     for(int i=1;i<=m;i++){
-        if(possible(node,colour,v,i))    colour[node] = i;
-        if(solve(node+1,colour,m,v))    return 1;
-        colour[node] = 0;
+        if(possible(node,colour,v,i)){
+            colour[node] = i;
+            if(solve(node+1,colour,m,v))    return 1;
+            colour[node] = 0;   //Becuse for other solution
+        }
     }
     return 0;
 
