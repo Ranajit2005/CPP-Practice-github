@@ -1,11 +1,10 @@
 #include<iostream>
 #include<fstream>
-#define INF 999
 using namespace std;
+
+#define INF 999
 const int N = 100;
 int graph[N][N];
-
-
 
 int main(){
     int v,e;
