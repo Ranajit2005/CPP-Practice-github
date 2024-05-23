@@ -13,8 +13,22 @@ void FindMaxMin(int arr[],int low,int high,int *max,int *min){
             *min = arr[low];
         }
     }else{
-        
+        int leftMax, leftMin, rightMax, rightMin, mid=(low+high)/2;
+        FindMaxMin(arr,low,mid,&leftMax,&leftMin);
+        FindMaxMin(arr,mid+1,high,&rightMax,&rightMin);
+        if(leftMax<rightMax){
+            *max = rightMax;
+        }else{
+            *max = leftMax;
+        }
+        if(leftMin<rightMin){
+            *min = leftMin;
+        }else{
+            *min = rightMin;
+        }
     }
+
+    return;
 }
 
 int main(){
@@ -30,6 +44,6 @@ int main(){
     }
 
     FindMaxMin(arr,0,n-1,&max,&min);
-
+    cout<<"The max element is : "<<max<<endl<<"The minimun element is : "<<min<<endl;
     return 0;
 }
