@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-//Note : It can be solve using map, pair or sets. Then the code will be more esay.
 
 void OppsiteBubbleSort(float p_w[],float profit[],float weight[],int n){
     for(int i = 0 ;i<n-1;i++){
@@ -35,19 +34,13 @@ int main(){
 
     OppsiteBubbleSort(p_w,profit,weight,n);
 
-    int wt_bag = 0;
-    float final_profit = 0;
+    float wt_bag = 0,final_profit = 0;
 
     for(int i=0;i<n;i++){
-
-        //It is for those items which we taken totally
         if(wt_bag + weight[i] <= maxwt){
             wt_bag += weight[i];
             final_profit += profit[i];
-        }
-
-        //It is for those item which we take fractonally
-        else{
+        }else{
             float remaining_wt = maxwt - wt_bag;
             final_profit += (profit[i]/weight[i])*remaining_wt;
             break;
