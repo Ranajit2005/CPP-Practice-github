@@ -45,5 +45,6 @@ int main(){
 
     FindMaxMin(arr,0,n-1,&max,&min);
     cout<<"The max element is : "<<max<<endl<<"The minimun element is : "<<min<<endl;
+    
     return 0;
 }
