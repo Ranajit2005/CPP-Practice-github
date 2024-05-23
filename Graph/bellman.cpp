@@ -40,11 +40,11 @@ int main(){
         int u = vec[i].u;
         int v = vec[i].v;
         int wt = vec[i].wt;
-        if(dist[u] + wt < dist[v]){
+        if(dist[u] != INF && dist[u] + wt < dist[v]){
             dist[v] = dist[u] + wt;
         }
         for(int j=1;j<=v;j++){
-        cout<<dist[j]<<" ";
+            cout<<dist[j]<<" ";
         }
         cout<<endl;
     }
