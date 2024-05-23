@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-//Note : It can be solve using map, pair or sets. Then the code will be more esay.
 
 void OppsiteBubbleSort(int profit[],int deadline[],char job_id[],int n){
     for(int i = 0 ;i<n-1;i++){
@@ -16,39 +15,38 @@ void OppsiteBubbleSort(int profit[],int deadline[],char job_id[],int n){
 
 int main(){
     int n,max_deadline;
-    
-    cout<<"Give the number of the Job : ";
+    cout<<"Give the number of the job : ";
     cin>>n;
 
-    int profit[n],deadline [n];
+    int profit[n],deadline[n];
     char job_id[n];
 
     for(int i=0;i<n;i++){
-        cout<<"Give job id as A,B,C... : ";
+        cout<<"Give job id as A,B,C ... : ";
         cin>>job_id[i];
-        cout<<"Give "<<job_id[i]<<" Job Profit and deadline respectivly : ";
+        cout<<"Give the profit and deadline : ";
         cin>>profit[i]>>deadline[i];
     }
 
     cout<<"Give the maximum deadline : ";
     cin>>max_deadline;
 
-    char slot[max_deadline+1];      //Beacause no deadline start from 0
-    for(int i=1;i<=max_deadline;i++){
-        slot[i]='0';
-    }
-    
     OppsiteBubbleSort(profit,deadline,job_id,n);
-    
-    int final_profit = 0, count_job = 0;
-    
-    for(int i = 0;i<n;i++){     // This loop is for all job checking 
-        for(int j=deadline[i];j>0;j--){        //This loop is for deadline or left side deadline
-            if(slot[j] == '0'){
+
+    char slot[max_deadline+1];  
+    for(int i=0;i<=max_deadline;i++){
+        slot[i] = '.';
+    }
+
+    int count_job=0,final_profit = 0;
+
+    for(int i=0;i<n;i++){
+        for(int j=deadline[i];j>0;j--){
+            if(slot[j] == '.'){
                 slot[j] = job_id[i];
                 count_job++;
                 final_profit += profit[i];
-                break;      //Don't forget to give it
+                break;
             }
         }
     }
