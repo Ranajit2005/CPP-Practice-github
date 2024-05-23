@@ -20,5 +20,21 @@ int main(){
             infile>>graph[i][j];
         }
     }
+
+    for(int k=0;k<v;k++){
+        for(int i=0;i<v;i++){
+            for(int j=0;j<v;j++){
+                graph[i][j] = min(graph[i][j],graph[i][k]+graph[k][j]);
+            }
+        }
+    }
+
+    for(int i=0;i<v;i++){
+        for(int j=0;j<v;j++){
+            cout<<graph[i][j]<<" ";
+        }
+        cout<<endl;
+    }    
+
     return 0;
 }
