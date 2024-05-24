@@ -13,8 +13,7 @@ void printBoard(char board[N][N],int n){
         cout<<endl;
     }
     solution++;
-    cout<<"Numver of the solution : "<<solution<<endl;
-    cout<<endl;
+    cout<<"Numver of the solution : "<<solution<<endl<<endl;
 }
 
 void solve(int col,char board[N][N],int n,int uppderDiagonal[],int lowerDiagonal[],int leftRow[]){
@@ -58,7 +57,6 @@ int main(){
         }
     }
 
-    int sol = 0;
     solve(0,board,n,upperDiagona,lowerDiagonal,leftrow);
 
     return 0;
