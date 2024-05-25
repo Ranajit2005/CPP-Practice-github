@@ -26,7 +26,7 @@ bool solve(int m,int v,int colour[],int node){
             colour[node] = i;
             if(solve(m,v,colour,node+1))    ;
             
-            colour[node] = 0;   //Backtring
+            colour[node] = 0;   //Backtring condition
         }
     }
     return 0;
