@@ -13,7 +13,6 @@ public:
     int wt;
 };
 
-
 int main(){
     int e,v,src;
     fstream infile;
@@ -32,11 +31,6 @@ int main(){
     for(int i=0;i<=v;i++){
         dist[i] = INF;
     }
-
-    // cout<<"The adjacence list is : "<<endl;
-    // for(int i=1;i<=e;i++){
-    //     cout<<p[i].u<<" "<<p[i].v<<" "<<p[i].wt<<endl;
-    // }
 
     cout<<"Graph start from 1 base and give the starting vertex : ";
     cin>>src;
