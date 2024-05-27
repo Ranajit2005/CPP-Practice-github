@@ -65,7 +65,7 @@ int main(){
         }
     }
 
-    Show(v);
+    // Show(v);
     int m;
     cout<<"Give the number of the colour : ";
     cin>>m;
