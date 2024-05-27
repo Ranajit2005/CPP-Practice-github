@@ -8,7 +8,7 @@ int main(){
     cin>>m;
 
     int n = m+1;
-    int diamention[m];
+    int diamention[n];
 
     for(int i = 0;i<n;i++){
         cout<<"Give the diemention : ";
