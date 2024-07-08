@@ -7,6 +7,8 @@ int FromJump(int n,int cost[]){
     DpArray[0] = 0;
 
     for(int i = 1;i<n;i++){
+        // jump = previous energy loss + current energy loss
+        
         int OneJump = DpArray[i-1] + abs(cost[i] - cost[i-1]);
         int TwoJump = INT16_MAX;
         if(i>1)     TwoJump = DpArray[i-2] + abs(cost[i] - cost[i-2]);
