@@ -6,6 +6,7 @@ using namespace std;
 
 int calculate(int index,vector<int>& num,vector<int>&dp){
     //We can do the code with more space optimisation
+    
     if(index == 0) return num[0];
     if(index < 0) return 0;
     if(dp[index] != -1) return dp[index];
