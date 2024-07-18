@@ -1,21 +1,24 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
     // Maximum sum of non adjacent elements
 
-int calculate(int index,int num[]){
+int calculate(int index,int num[],vector<int>&dp){
     if(index == 0) return num[0];
     if(index < 0) return 0;
+    if(dp[index] != -1) return dp[index];
 
-    int pick_element = num[index] + calculate(index - 2,num);
-    int non_pick_element = 0 + calculate(index - 1,num);
+    int pick_element = num[index] + calculate(index - 2,num,dp);
+    int non_pick_element = 0 + calculate(index - 1,num,dp);
 
-    return max(pick_element,non_pick_element);
+    return dp[index] = max(pick_element,non_pick_element);
 
 }
 
 int maxSum(int num[],int size){
-    return calculate(size - 1,num);
+    vector<int>dp(size,-1);
+    return calculate(size - 1,num,dp);
 }
 
 
