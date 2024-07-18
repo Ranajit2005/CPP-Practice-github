@@ -5,6 +5,7 @@ using namespace std;
     // House are place in circular so we cannot take last and first house together. We cannot robbery in two consicutive house. We havw to find maximum robbery profit. This problem is similar like Maximum sum of non adjacent elements problem.
 
 int calculate(int index,vector<int>& num,vector<int>&dp){
+    //We can do the code with more space optimisation
     if(index == 0) return num[0];
     if(index < 0) return 0;
     if(dp[index] != -1) return dp[index];
