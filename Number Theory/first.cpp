@@ -9,9 +9,9 @@ void print(int number){
 }
 
 int main(){
-    print(15);
+    print(5);
 
-    // cout<< (15 >> 4) <<endl;
+    cout<< ((5 >> 1) & 1) <<endl;
 
     return 0;
 }
