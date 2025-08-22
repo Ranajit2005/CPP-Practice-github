@@ -1,6 +1,6 @@
-// Diagonal Matrix
 #include<bits/stdc++.h>
 using namespace std;
+
 
 class Diagonal{
     private:
