@@ -2,14 +2,14 @@
 using namespace std;
 
 
-class LowerDiagonal{
+class UpperDiagonal{
     private:
         int diamention;
         int *A;
         int size;
 
     public:
-        LowerDiagonal(int diamention){
+        UpperDiagonal(int diamention){
             this->diamention = diamention;
             this->size = ((diamention * (diamention + 1))/2);
             A = new int[size];
@@ -20,26 +20,26 @@ class LowerDiagonal{
     void GetElement();
 };
 
-void LowerDiagonal :: Create(){
+void UpperDiagonal :: Create(){
     for(int i=0;i<size;i++){
 
         int r,c,ele;
         cout<<"Give row, col, ele following 0 based indexing : ";
         cin>>r>>c>>ele;
 
-        if(r < c){
+        if(r > c){
             cout<<"Give proper position ";
             exit(0);
         }
-        A[((r * (r + 1)) / 2) + c] = ele;
+        A[(((r * diamention) - ((r * (r - 1)))/2) + c)] = ele;
     }
 }
 
-void LowerDiagonal :: Display(){
-    for(int i=0;i<diamention;i++){
-        for(int j=0;j<diamention;j++){
-            if(i>=j){
-                cout<<A[((i * (i + 1)) / 2) + j]<<" ";
+void UpperDiagonal :: Display(){
+    for(int r=0;r<diamention;r++){
+        for(int c=0;c<diamention;c++){
+            if(r<=c){
+                cout<<A[(((r * diamention) - ((r * (r - 1)))/2) + c)]<<" ";
             }else{
                 cout<<"0 ";
             }
@@ -48,16 +48,16 @@ void LowerDiagonal :: Display(){
     }
 }
 
-void LowerDiagonal :: GetElement(){
+void UpperDiagonal :: GetElement(){
     int r,c;
     cout<<"Give row and col for accessing element : ";
     cin>>r>>c;
 
-    if(r < c){
+    if(r > c){
         cout<<"Give proper position ";
         exit(0);
     }
-    cout<<A[((r * (r + 1)) / 2) + c]<<endl;
+    cout<<A[(((r * diamention) - ((r * (r - 1)))/2) + c)]<<endl;
 }
 
 int main(){
@@ -65,11 +65,11 @@ int main(){
     cout<<"Give the diamention : ";
     cin>>n;
 
-    LowerDiagonal ld(n);
+    UpperDiagonal ud(n);
 
-    ld.Create();
-    ld.Display();
-    ld.GetElement();
+    ud.Create();
+    ud.Display();
+    ud.GetElement();
 
     return 0;
 }
