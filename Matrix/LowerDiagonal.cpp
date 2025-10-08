@@ -14,6 +14,10 @@ class LowerDiagonal{
             this->size = ((diamention * (diamention + 1))/2);
             A = new int[size];
         }
+
+        ~LowerDiagonal(){
+            delete[] A;
+        }
     
     void Create();
     void Display();

@@ -14,6 +14,10 @@ class UpperDiagonal{
             this->size = ((diamention * (diamention + 1))/2);
             A = new int[size];
         }
+
+        ~UpperDiagonal(){
+            delete[] A;
+        }
     
     void Create();
     void Display();

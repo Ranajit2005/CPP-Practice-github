@@ -4,6 +4,7 @@ using namespace std;
 void print(int number){
     for(int i=10;i>=0;i--){
         cout<<((number >> i) & 1);
+        // cout<<endl;
     }
     cout<<endl;
 }
