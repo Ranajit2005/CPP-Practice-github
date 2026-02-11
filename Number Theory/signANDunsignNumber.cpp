@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
 int main(){
     cout<<INT_MAX<<endl;
 
@@ -10,7 +11,7 @@ int main(){
     unsigned int b = (1LL << 32) - 1;
     cout << b <<endl;
 
-    // one bit is reserve for sign (positive or negetive )
+    //So one bit is reserved for sign (positive or negative)
 
     return 0;
 }
